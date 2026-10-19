@@ -17,10 +17,12 @@ body {
 }
 
 header {
-  background: linear-gradient(135deg, #4f46e5, #3b82f6);
-  color: #fff;
+  background: #fff;
   padding: 3rem 2rem;
-  text-align: center;
+  text-align: left;
+  box-shadow: inset 0 -3px 0 gray;
+  color:black;
+  height: 10px;
 }
 
 header h1 {
@@ -28,7 +30,7 @@ header h1 {
 }
 
 header p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   opacity: 0.9;
 }
 
@@ -68,6 +70,10 @@ main {
 
 .cta-button:hover {
   background: #3730a3;
+}
+
+.song-title{
+  cursor: pointer;
 }
 
 footer {

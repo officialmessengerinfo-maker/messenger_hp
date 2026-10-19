@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,19 +8,145 @@
 
   <!-- ファビコンの指定 -->
   <link rel="icon" href="img/favicon.jpg" type="image/jpeg" />
+  <!-- CSSの設定 -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/tab.css" />
+  <link rel="stylesheet" href="css/link.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <!-- Jqueryの設定 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+  <!-- Bootstrapの設定 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
 
-  <!-- 外部CSSの読み込み -->
-  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <header>
-    <h1>Cloudflare Pagesテスト</h1>
-    <p>これはCloudflare Pagesの紹介で使用するサンプルサイトです</p>
+    <p>Messenger</p>
   </header>
 
   <main>
-    <section class="section">
+
+    <!-- タブのコンテナ -->
+    <div class="tab-container">
+      <div class="tab active">
+        <h3>概要</h3>
+      </div>
+      <div class="tab">
+        <h3>曲一覧</h3>
+      </div>
+      <div class="tab">
+        <h3>リンク</h3>
+      </div>
+    </div>
+
+    <!-- コンテンツのコンテナ -->
+    <div class="content-container">
+      <div class="content show">
+        タブ1のコンテンツ
+      </div>
+
+      <div class="content">
+        <div class="form-group">
+          <input type='text' id="keyword" class="form-control" placeholder="タイトル、VOCALOID">
+          <button type="button" id="submit" class="btn">検索</button>
+        </div>
+        <p id="result"></p>
+        <div class="songlist-container">
+          <section class="section song-list-section">
+            <div class="song-grid">
+              <!-- 曲カード 1 -->
+              <article class="song-card" id="modal-open">
+                <div class="song-thumbnail">
+                  <!-- 実際の画像パスを指定してください -->
+                  <img src="img/thumb_sample1.jpg" alt="曲のサムネイル"
+                    onerror="this.src='https://via.placeholder.com/400x225/4f46e5/ffffff?text=No+Image';">
+                  <span class="badge-bpm">BPM 135</span>
+                </div>
+                <div class="song-info">
+                  <h3 class="song-title">ひとつ</h3>
+
+                  <div class="song-vocal">
+                    <span class="label">Vocal:</span>
+                    <span class="vocal-tag">ナースロボ_タイプT</span>
+                    <span class="vocal-tag">重音テト</span>
+                  </div>
+
+                  <div class="song-credits">
+                    <div class="credit-item"><span class="credit-role">作詞・作曲:</span> ユーザー</div>
+                    <div class="credit-item"><span class="credit-role">イラスト:</span> ちゃそ</div>
+                    <div class="credit-item"><span class="credit-role">Mix / Mastering:</span>AoBell</div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 曲カード 2 -->
+              <article class="song-card">
+                <div class="song-thumbnail">
+                  <img src="img/thumb_sample2.jpg" alt="曲のサムネイル"
+                    onerror="this.src='https://via.placeholder.com/400x225/3b82f6/ffffff?text=No+Image';">
+                  <span class="badge-bpm">BPM 170</span>
+                </div>
+                <div class="song-info">
+                  <h3 class="song-title">ライナーノーツ</h3>
+
+                  <div class="song-vocal">
+                    <span class="label">Vocal:</span>
+                    <span class="vocal-tag">音街ウナ</span>
+                  </div>
+
+                  <div class="song-credits">
+                    <div class="credit-item"><span class="credit-role">作詞・作曲:</span> ユーザー</div>
+                    <div class="credit-item"><span class="credit-role">イラスト:</span> ゲスト絵師</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <div class="modal-container">
+          <div class="modal-body">
+            <div class="modal-close">×</div>
+            <div class="modal-content" style="background-color:white;">
+              <p>開きました。</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="content">
+        <div class="link-container">
+          <div class="link">
+            <a href="https://x.com/Messenger2021" target="_blank">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <p>X</p>
+          </div>
+          <div class="link">
+            <a href="https://youtube.com/@messenger-p?si=1wQNnSyF4gfbyDxw" target="_blank">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <p>YouTube</p>
+          </div>
+          <div class="link">
+            <a href="https://note.com/messenger2019" target="_blank">
+              <img src="img/note.png" class="link_image">
+            </a>
+            <p>note</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <section class="section">
       <h2>このページについて</h2>
       <p>
         このサイトはHTML/CSS/JavaScriptだけで構成されており、Cloudflare Pagesで無料でホスティングされています。
@@ -34,14 +161,16 @@
         <li>Cloudflare Pagesに接続</li>
         <li>数秒でサイトが公開されます</li>
       </ol>
-    </section>
+    </section> -->
   </main>
 
   <footer>
-    <p>&copy; 2026 Cloudflare Pages Test</p>
+    <p>&copy; Messenger</p>
   </footer>
 
-  <!-- 外部JavaScriptの読み込み -->
-  <script src="main.js"></script>
+  <script src="javascript/main.js"></script>
+  <script src="javascript/keyword.js"></script>
+  <script src="javascript/modal.js"></script>
 </body>
+
 </html>

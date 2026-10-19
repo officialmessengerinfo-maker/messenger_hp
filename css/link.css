@@ -1,0 +1,12 @@
+.link a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.link p{
+    text-align: center;
+}
+
+.link_image{
+    width:10%;
+}

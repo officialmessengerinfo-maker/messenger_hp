@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.content {
+    display: none;
+}
+.content.show {
+    display: block;
+}
+
+.tab-container,
+.link-container,
+.song-grid{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tab{
+    margin:0px 50px;
+    cursor: pointer;
+}
+
+.tab.active{
+    border-bottom: 1px solid #000;
+}
+
+.link{
+    margin-left: 20px;
+}
+
+.link i{
+    font-size:40px;
+    border: 2px solid black;
+    padding: 4px 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.content{
+    margin-top: 10%;
+}
